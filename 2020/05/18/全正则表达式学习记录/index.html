@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<meta charset=utf-8>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name=viewport content='width=device-width, initial-scale=1, user-scalable=no'>
+<title>全正则表达式学习记录</title>
+<meta name=author content='Del'>
+<!--[if IE]>
+  <meta http-equiv=refresh content='0, http://browsehappy.com'>
+<![endif]-->
+<link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css>
+<link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css>
+<link rel=stylesheet href=/css/style.css>
+
+
+<body oncontextmenu='return false'>
+  <div class=aios_content>
+    <div class=bg-gradient></div>
+    <div class=bg-pattern></div>
+    <div class=menu-bg>
+  <div class=menu-container>
+    <ul>
+      
+        <li class=menu-item>
+          <a href='/'>Home</a>
+        </li>
+      
+        <li class=menu-item>
+          <a href='/archives'>Docs</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+<nav>
+  <a></a>
+</nav>
+
+    <div class=container style='padding-bottom:40px'>
+      <div class=row>
+  <div class=col-sm-12>
+    <header>
+  <div class=logo>
+    <h1 id=main-title class=title><a href=/>Hello Time</a></h1>
+  </div>
+</header>
+
+
+    <section class=main>
+      <div class=post>
+  <div class=post-header>
+    <h1 class=title>全正则表达式学习记录</h1>
+    <div class=post-info>
+      <span class=date>2020-05-18</span>
+
+      
+    </div>
+  </div>
+
+  <div class=content>
+    <!-- Gallery -->
+    
+
+    <p><strong>正则表达式：就是用某种模式去匹配一类字符串的公式，它是由一串字符和元字符构成的字符串，所谓元字符，就是用以阐述字符表达式的内容、转换和描述各种操作信息的字符。</strong></p>
+<h3 id="基础正则表达式"><a href="#基础正则表达式" class="headerlink" title="基础正则表达式"></a>基础正则表达式</h3><h6 id="1-“-“-一个点-符号"><a href="#1-“-“-一个点-符号" class="headerlink" title="1. “ . “(一个点)符号"></a>1. “ . “(一个点)符号</h6><p>用于匹配除换行符以外的任意一个字符。<br>示例：<strong><em>其中红色为匹配部分</em></strong><br><img src="https://img-blog.csdnimg.cn/20200506135014436.png" alt="在这里插入图片描述"></p>
+<h6 id="2-“-“-符号"><a href="#2-“-“-符号" class="headerlink" title="2. “ * “ 符号"></a>2. “ * “ 符号</h6><p>用于匹配<strong>前一个字符0次或任意多次</strong>。<br>示例：由于/etc/passwd中没有rt、rrt这样的匹配，所以该表达式只找出了包含t的行（r匹配了0次）。<br><img src="https://img-blog.csdnimg.cn/20200506135444749.png" alt="在这里插入图片描述"></p>
+<h6 id="3-“-n-m-”-符号"><a href="#3-“-n-m-”-符号" class="headerlink" title="3. “\{n,m\}” 符号"></a>3. “\{n,m\}” 符号</h6><p>虽然”*”可以重复匹配前一个字符，但不能精确控制次数，使用”\{n,m\}” 则能灵活控制字符重复次数，典型的有以下3种形式：</p>
+<ul>
+<li>\{n\} 匹配前面的字符n次<br>示例：’ro\{2\}t’ 表示匹配以r开头后面接重复2次o再接t的字符 root 。<br><img src="https://img-blog.csdnimg.cn/20200506135859135.png" alt="在这里插入图片描述"></li>
+<li>\{n,\} 匹配前面的字符至少n次以上（含n次），示例：<img src="https://img-blog.csdnimg.cn/20200506134817200.png" alt="在这里插入图片描述"></li>
+<li>\{n,m\} 匹配前面的字符n到m次<br><img src="https://img-blog.csdnimg.cn/20200506140220602.png" alt="在这里插入图片描述"><h6 id="4-“-”-符号"><a href="#4-“-”-符号" class="headerlink" title="4. “^” 符号"></a>4. “^” 符号</h6>这个符号位于键盘数字6上面，又称尖角号。用于匹配开头的字符 。<br>示例：“^root”表示匹配以root开头的行<br><img src="https://img-blog.csdnimg.cn/20200506141119198.png" alt="在这里插入图片描述"><h6 id="5-”-”符号"><a href="#5-”-”符号" class="headerlink" title="5.”$”符号"></a>5.”$”符号</h6>和上面的”^”号相对，”$”用于匹配尾部。<br>示例：”abc$“表示以abc结尾的行，”^$“因为中间什么都没有，表示空行。下面”^r.*h$“表示以r开头，中间有一串任意字符，以h结尾的行。<br><img src="https://img-blog.csdnimg.cn/20200506141626423.png" alt="在这里插入图片描述"><h6 id="6-”-”符号"><a href="#6-”-”符号" class="headerlink" title="6.”[]”符号"></a>6.”[]”符号</h6>这是一对方括号，用于匹配括号内出现的任一字符。比如说单项选择题答案可能是A，B，C，D一种，用正则表达式就是[ABCD]。如果遇到比较大的范围，比如说匹配任意一个大写字母，就要用”-“做范围限定，写成[A-Z]，要匹配所有字母则写成[A-Za-z],注意，这里的”-“不是充当一个字符。数字则写成[0-9]。<br>如果要匹配不是大写字母A，B，C，D，使用”^“，这个符号出现在[]中代表取反，写成[^A-D]。</li>
+</ul>
+<h6 id="7-”-“符号"><a href="#7-”-“符号" class="headerlink" title="7.”\“符号"></a>7.”\“符号</h6><p>转义符号，上面提到”-“号在[]中有特别含义，举个例子，有个固定电话021-88888888，<br>也可写成021 88888888区号和电话号码中间用空格隔开，一个是”-“，一个是空格，那我们不能这么写：[-]，为了表示其作为一个字符的本意，就要使用转义符”\“了，那这里应该写成[\ \-]其实在这里这个表达式中总共写了4个”\“，但你只能看到2个，就是因为“\”本身在这里就有特殊意义，如果只写两个，你就看不到它了本文中如果有些地方符号显示不正常，可能就是没有进行转义，怪我粗心了。很多地方很多符号都需要进行转义，就需要使用”\“进行转义。<br><img src="https://img-blog.csdnimg.cn/20200506144546215.png" alt="在这里插入图片描述"></p>
+<h6 id="8-”-lt-”符号和”-gt-”符号"><a href="#8-”-lt-”符号和”-gt-”符号" class="headerlink" title="8.”\&lt;”符号和”\&gt;”符号"></a>8.”\&lt;”符号和”\&gt;”符号</h6><p>这两个符号分别用于界定单词的左边界和右边界。如果两个组合在一起，能够精确匹配，如”\&lt;hello\&gt;”可以精确匹配单词hello.<br>示例：<br><img src="https://img-blog.csdnimg.cn/20200506145806926.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzIyMzc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>以上8种是常见的元字符，还有些不太常用的字符，这些字符中有不少可以使用之前的8种基础元字符来表示。以下只作简单示例</p>
+<h6 id="9-”-d”符号"><a href="#9-”-d”符号" class="headerlink" title="9.”\d”符号"></a>9.”\d”符号</h6><p>匹配一个数字，等价于[0-9]，使用grep匹配这种正则表达式时可能会有无法匹配的问题。<br><img src="https://img-blog.csdnimg.cn/2020050615130787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzIyMzc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="10-”-b”符号和”-B符号”"><a href="#10-”-b”符号和”-B符号”" class="headerlink" title="10.”\b”符号和”\B符号”"></a>10.”\b”符号和”\B符号”</h6><p>“\b符号”匹配单词的边界，而”\B”符号则刚好相反，匹配非单词边界。<br><img src="https://img-blog.csdnimg.cn/20200506151901451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzIyMzc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="11-”-w”符号和”-W”符号"><a href="#11-”-w”符号和”-W”符号" class="headerlink" title="11.”\w”符号和”\W”符号"></a>11.”\w”符号和”\W”符号</h6><p>“\w”符号 匹配字母、数字和下划线，等价于[A-Za-z0-9]<br>“\W”符号与”\w”相反，匹配非字母、非数字、非下划线，等价于[^A-Za-z0-9]。<img src="https://img-blog.csdnimg.cn/20200506152405246.png" alt="在这里插入图片描述"></p>
+<h6 id="12-”-n”符号"><a href="#12-”-n”符号" class="headerlink" title="12.”\n”符号"></a>12.”\n”符号</h6><p>匹配一个换行符。</p>
+<h6 id="13-”-r”符号"><a href="#13-”-r”符号" class="headerlink" title="13.”\r”符号"></a>13.”\r”符号</h6><p>匹配一个回车符。</p>
+<h6 id="14-”-t”符号"><a href="#14-”-t”符号" class="headerlink" title="14.”\t”符号"></a>14.”\t”符号</h6><p>匹配一个制表符。</p>
+<h6 id="15-”-f”符号"><a href="#15-”-f”符号" class="headerlink" title="15.”\f”符号"></a>15.”\f”符号</h6><p>匹配一个换页符。</p>
+<h6 id="16-”-s”符号"><a href="#16-”-s”符号" class="headerlink" title="16.”\s”符号"></a>16.”\s”符号</h6><p>匹配任何空白字符。</p>
+<h6 id="17-”-S”符号"><a href="#17-”-S”符号" class="headerlink" title="17.”\S”符号"></a>17.”\S”符号</h6><p>匹配任何非空白字符。</p>
+<h3 id="扩展正则表达式"><a href="#扩展正则表达式" class="headerlink" title="扩展正则表达式"></a>扩展正则表达式</h3><p>扩展正则表达式是针对基础正则表达式的一些补充，比基础正则表达式多了几个重要的符号，使用扩展符号时，需要使用egrep命令。</p>
+<ol>
+<li>“?”符号<br>“?”符号用于匹配前一个字符0次或1次，所以’ro?t’仅能匹配rot或rt。</li>
+<li>“+”符号<br>“+”符号用于匹配前一个字符1次以上，所以’ro+t’可以匹配rot,root等。</li>
+<li>“|”符号<br>“|”是”或”的意思,即多种可能的罗列，彼此间是一种分支关系。<br>比如有的地方固定电话的区号是3位数，有的却是4位数：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#区号是3位数</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">2</span>\&#125;-[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br><span class="line"><span class="comment">#区号是4位数</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">3</span>\&#125;-[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br><span class="line"><span class="comment">#两种区号</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">2</span>,<span class="number">3</span>\&#125;-[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br><span class="line"><span class="comment">#也可以用"|"符号，但显然比上面这种更麻烦</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">2</span>\&#125;-[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;|^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">3</span>\&#125;-[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>“()”符号<br>“()”符号通常需要和”|”符号联合使用，用于枚举一系列可替换的字符。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用"()"和"|"定义连接符的写法</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">2</span>,<span class="number">3</span>\&#125;(-| )[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br><span class="line"><span class="comment">#这样021-88888888和0511 88888888都能匹配</span></span><br><span class="line"><span class="comment">#这种写法也可以用[]替换</span></span><br><span class="line">^<span class="number">0</span>[<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">2</span>,<span class="number">3</span>\&#125;[\ \-][<span class="number">0</span><span class="number">-9</span>]\&#123;<span class="number">8</span>\&#125;</span><br><span class="line"><span class="comment">#虽然"()"和"|"可以和"[]"混用，但在某些场景下"()"和"|"可以做得更好</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>通配符是一种特殊的语句，主要包含”*”号和”?”号（还有”{}”,”^”,”!”)。主要用来模糊搜索文件，使用它代替一个或多个真正的字符，尤其是在不确定完整的文件名的情况下，用来匹配符合条件的文件。</p>
+<ol>
+<li>“*”符号代表0个或多个字符，示例：</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#显示当前目录所有以.doc为后缀名的文件</span></span><br><span class="line">ls <span class="literal">-l</span> *.doc</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>“?”符号，当它作为通配符使用时，代表任意一个字符：</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出所有以A开头的两个字符名并以.doc为后缀的文件</span></span><br><span class="line">ls <span class="literal">-l</span> A?.doc</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>“{}”符号可匹配所有括号内包含的以逗号隔开的字符。</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出所有以字母A,B,C开头，以.doc结尾的文件</span></span><br><span class="line">ls <span class="literal">-l</span> &#123;A,B,C&#125;.doc</span><br><span class="line"><span class="comment">#当然，使用"[]"也行</span></span><br><span class="line">ls <span class="literal">-l</span> [<span class="type">A</span>-<span class="type">C</span>].doc</span><br><span class="line"><span class="comment">#但是如果要列出以字母AB，CD开头以.doc结尾的文件就只能用"&#123;&#125;"了，想一想为什么</span></span><br></pre></td></tr></table></figure>
+<p>“{}”还支持嵌套的通配，以”{x,y}”为例，如果x和y各自本身也是通配符，那效果就更强大了。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#想一想下列示例的含义</span></span><br><span class="line">ls <span class="literal">-l</span> &#123;[<span class="type">A</span>-<span class="type">Z</span>]*.doc,[<span class="number">0</span>-<span class="number">9</span>]??.txt&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>“^”符号和”!”符号<br>这两个符号往往和”[]”一起使用，当出现在”[]”中的时候代表取反，所以[^A]和[!A]代表不是A。</li>
+</ol>
+<h5 id="通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。"><a href="#通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。" class="headerlink" title="通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。"></a>通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。</h5>
+    <span class='date end-date'>2020-05-18</span>
+  </div>
+
+  
+
+  
+</div>
+
+    </section>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <footer class=footer-content>
+  <div class=container>
+    <div class=row>
+      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about'>
+        <h2>About</h2>
+        <section>
+          作者GitHub地址： <a href=//github.com/del20 target=_blank>Del</a><br>主题作者： <a href=//github.com/klugjo target=_blank> Jonathan Klughertz</a>
+        </section>
+      </div>
+      
+  <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about'>
+    <h2>New Contents</h2>
+    <ul>
+      
+        <li>
+          <a class=footer-post href='/2020/05/18/%E5%85%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/'>全正则表达式学习记录</a>
+        </li>
+      
+        <li>
+          <a class=footer-post href='/2020/05/18/Manjaro%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/'>Manjaro终端美化</a>
+        </li>
+      
+        <li>
+          <a class=footer-post href='/2020/05/18/%E6%9C%80%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/'>最新Termux安装Metasploit教程</a>
+        </li>
+      
+        <li>
+          <a class=footer-post href='/2020/05/18/hello-world/'>Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+      
+
+    </div>
+    <div class=row>
+      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        <ul class='list-inline footer-social-icons'></ul>
+      </div>
+    </div>
+    <div class=row>
+      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        <div class=footer-copyright>@Untitled. All right reserved | Design & Hexo <a href=//del20.github.io target=_blank>Del</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+<script src=//code.jquery.com/jquery-2.1.4.min.js></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js></script>
+<script src=/js/main.js></script>
+
