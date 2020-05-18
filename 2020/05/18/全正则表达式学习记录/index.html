@@ -1,68 +1,178 @@
-<!DOCTYPE HTML>
-<meta charset=utf-8>
-<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<meta name=viewport content='width=device-width, initial-scale=1, user-scalable=no'>
-<title>全正则表达式学习记录</title>
-<meta name=author content='Del'>
-<!--[if IE]>
-  <meta http-equiv=refresh content='0, http://browsehappy.com'>
-<![endif]-->
-<link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css>
-<link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css>
-<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css>
-<link rel=stylesheet href=/css/style.css>
+<!DOCTYPE html>
+<html lang="en">
 
+<!-- Head tag -->
+<head>
 
-<body oncontextmenu='return false'>
-  <div class=aios_content>
-    <div class=bg-gradient></div>
-    <div class=bg-pattern></div>
-    <div class=menu-bg>
-  <div class=menu-container>
-    <ul>
-      
-        <li class=menu-item>
-          <a href='/'>Home</a>
-        </li>
-      
-        <li class=menu-item>
-          <a href='/archives'>Docs</a>
-        </li>
-      
-    </ul>
-  </div>
-</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<nav>
-  <a></a>
-</nav>
-
-    <div class=container style='padding-bottom:40px'>
-      <div class=row>
-  <div class=col-sm-12>
-    <header>
-  <div class=logo>
-    <h1 id=main-title class=title><a href=/>Hello Time</a></h1>
-  </div>
-</header>
-
-
-    <section class=main>
-      <div class=post>
-  <div class=post-header>
-    <h1 class=title>全正则表达式学习记录</h1>
-    <div class=post-info>
-      <span class=date>2020-05-18</span>
-
-      
-    </div>
-  </div>
-
-  <div class=content>
-    <!-- Gallery -->
+    <!--Description-->
+    
+        <meta name="description" content="Del 个人博客，涉及Linux,Python,编程等技术内容，本站为个人学习使用，主要用于记录，分享！">
     
 
-    <p><strong>正则表达式：就是用某种模式去匹配一类字符串的公式，它是由一串字符和元字符构成的字符串，所谓元字符，就是用以阐述字符表达式的内容、转换和描述各种操作信息的字符。</strong></p>
+    <!--Author-->
+    
+        <meta name="author" content="Del">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="全正则表达式学习记录"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Del 个人博客，涉及Linux,Python,编程等技术内容，本站为个人学习使用，主要用于记录，分享！" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello Time"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>全正则表达式学习记录 - Hello Time</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/05/18/%E5%85%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                全正则表达式学习记录
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-18</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p><strong>正则表达式：就是用某种模式去匹配一类字符串的公式，它是由一串字符和元字符构成的字符串，所谓元字符，就是用以阐述字符表达式的内容、转换和描述各种操作信息的字符。</strong></p>
 <h3 id="基础正则表达式"><a href="#基础正则表达式" class="headerlink" title="基础正则表达式"></a>基础正则表达式</h3><h6 id="1-“-“-一个点-符号"><a href="#1-“-“-一个点-符号" class="headerlink" title="1. “ . “(一个点)符号"></a>1. “ . “(一个点)符号</h6><p>用于匹配除换行符以外的任意一个字符。<br>示例：<strong><em>其中红色为匹配部分</em></strong><br><img src="https://img-blog.csdnimg.cn/20200506135014436.png" alt="在这里插入图片描述"></p>
 <h6 id="2-“-“-符号"><a href="#2-“-“-符号" class="headerlink" title="2. “ * “ 符号"></a>2. “ * “ 符号</h6><p>用于匹配<strong>前一个字符0次或任意多次</strong>。<br>示例：由于/etc/passwd中没有rt、rrt这样的匹配，所以该表达式只找出了包含t的行（r匹配了0次）。<br><img src="https://img-blog.csdnimg.cn/20200506135444749.png" alt="在这里插入图片描述"></p>
 <h6 id="3-“-n-m-”-符号"><a href="#3-“-n-m-”-符号" class="headerlink" title="3. “\{n,m\}” 符号"></a>3. “\{n,m\}” 符号</h6><p>虽然”*”可以重复匹配前一个字符，但不能精确控制次数，使用”\{n,m\}” 则能灵活控制字符重复次数，典型的有以下3种形式：</p>
@@ -113,69 +223,186 @@
 <li>“^”符号和”!”符号<br>这两个符号往往和”[]”一起使用，当出现在”[]”中的时候代表取反，所以[^A]和[!A]代表不是A。</li>
 </ol>
 <h5 id="通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。"><a href="#通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。" class="headerlink" title="通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。"></a>通配符和正则表达式之间存在一些差异，特别是有些相同的字符既用在正则表达式中又用在通配符中，极易造成混淆和干扰，只有通过多读多想才能加深理解和认识！简单的说，正则表达式主要用在文件内容的匹配上，而通配符主要用在文件名的匹配上，可以用这种方法来区别二者。</h5>
-    <span class='date end-date'>2020-05-18</span>
-  </div>
-
-  
-
-  
-</div>
-
-    </section>
-  </div>
-</div>
-
     </div>
-  </div>
-  <footer class=footer-content>
-  <div class=container>
-    <div class=row>
-      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about'>
-        <h2>About</h2>
-        <section>
-          作者GitHub地址： <a href=//github.com/del20 target=_blank>Del</a><br>主题作者： <a href=//github.com/klugjo target=_blank> Jonathan Klughertz</a>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
+</div>
         </section>
-      </div>
-      
-  <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about'>
-    <h2>New Contents</h2>
-    <ul>
-      
-        <li>
-          <a class=footer-post href='/2020/05/18/%E5%85%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/'>全正则表达式学习记录</a>
-        </li>
-      
-        <li>
-          <a class=footer-post href='/2020/05/18/Manjaro%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/'>Manjaro终端美化</a>
-        </li>
-      
-        <li>
-          <a class=footer-post href='/2020/05/18/%E6%9C%80%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/'>最新Termux安装Metasploit教程</a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-      
 
     </div>
-    <div class=row>
-      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-        <ul class='list-inline footer-social-icons'></ul>
-      </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/18/%E5%85%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">全正则表达式学习记录</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/18/Manjaro%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/">Manjaro终端美化</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/05/18/%E6%9C%80%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/">最新Termux安装Metasploit教程</a>
+            </li>
+            
+        </ul>
     </div>
-    <div class=row>
-      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-        <div class=footer-copyright>@Untitled. All right reserved | Design & Hexo <a href=//del20.github.io target=_blank>Del</a></div>
-      </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 
-</body>
-<script src=//code.jquery.com/jquery-2.1.4.min.js></script>
-<script src=//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js></script>
-<script src=//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js></script>
-<script src=/js/main.js></script>
+<!-- After footer scripts -->
 
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

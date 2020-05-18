@@ -59,11 +59,20 @@ a:hover {
 .btn:active {
   background: #62b4ff;
 }
+.push {
+  height: 150px;
+}
+@media (max-width: 33.9em) {
+  .push {
+    height: 60px;
+  }
+}
 header {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 header .logo {
   margin: 0 auto;
+  text-align: center;
 }
 header .logo a,
 header .logo a:link,
@@ -71,18 +80,21 @@ header .logo a:visited,
 header .logo a:active {
   border-bottom: none;
 }
+header .logo .logo-icon {
+  font-size: 60px;
+  color: #d7ecff;
+  text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px #228dff;
+}
+header .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 header .logo .title {
-  font-size: 3rem;
-  text-align: center;
   line-height: 100px;
   color: #d7ecff;
   font-family: "Orbitron", sans-serif;
   text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px #228dff;
-}
-@media (max-width: 33.9em) {
-  header .logo .title {
-    font-size: 2rem;
-  }
 }
 section.main {
   color: #d7ecff;
@@ -98,37 +110,53 @@ section.main .post {
 section.main .post .post-header {
   position: relative;
   width: 100%;
+  margin: 0 10px;
 }
-section.main .post .post-header:before,
-section.main .post .post-header:after {
-  content: '';
+section.main .post .post-header:before {
   position: absolute;
+  padding: 5px;
   top: -10px;
   bottom: -10px;
-  padding: 5px;
-  border-top: 1px solid #d7ecff;
+  left: -5px;
+  content: "  ";
+  border-left: 1px solid #d7ecff;
   border-bottom: 1px solid #d7ecff;
+  border-top: 1px solid #d7ecff;
+  transition: left 0.3s ease;
 }
-@media (max-width: 47.9em) {
-  section.main .post .post-header:before,
+@media (max-width: 33.9em) {
+  section.main .post .post-header:before {
+    display: none;
+  }
+}
+section.main .post .post-header:after {
+  position: absolute;
+  content: "  ";
+  padding: 5px;
+  top: -10px;
+  bottom: -10px;
+  right: -5px;
+  border-right: 1px solid #d7ecff;
+  border-bottom: 1px solid #d7ecff;
+  border-top: 1px solid #d7ecff;
+  transition: right 0.3s ease;
+}
+@media (max-width: 33.9em) {
   section.main .post .post-header:after {
     display: none;
   }
 }
-section.main .post .post-header:before {
-  left: -5px;
-  border-left: 1px solid #d7ecff;
-  transition: left 0.3s ease;
-}
-section.main .post .post-header:after {
-  right: -5px;
-  border-right: 1px solid #d7ecff;
-  transition: right 0.3s ease;
-}
 section.main .post .post-header h1.title {
-  font-family: "Orbitron", sans-serif;
   text-align: center;
-  transition: all 0.3s;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px #228dff;
+  cursor: pointer;
+}
+section.main .post .post-header h1.title a,
+section.main .post .post-header h1.title a:link,
+section.main .post .post-header h1.title a:visited,
+section.main .post .post-header h1.title a:active {
+  border-bottom: none;
 }
 @media (max-width: 33.9em) {
   section.main .post .post-header h1.title {
@@ -139,21 +167,16 @@ section.main .post .post-header .post-info {
   margin-top: 15px;
   text-align: center;
   text-transform: uppercase;
-  transition: all 0.3s;
   font-family: "Orbitron", sans-serif;
 }
 section.main .post .post-header .post-info span {
   padding: 10px;
 }
-section.main .post .post-header.animation:hover h1.title,
-section.main .post .post-header.animation:hover .post-info {
-  text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px #228dff;
+section.main .post .post-header.hover:before {
+  left: 5px;
 }
-section.main .post .post-header.animation:hover:before {
-  left: 10px;
-}
-section.main .post .post-header.animation:hover:after {
-  right: 10px;
+section.main .post .post-header.hover:after {
+  right: 5px;
 }
 section.main .post .content {
   margin-top: 65px;
@@ -169,7 +192,7 @@ section.main .post .content .gallery-container {
   display: block;
 }
 section.main .post .content .gallery-container:after {
-  content: '';
+  content: " ";
   visibility: hidden;
   display: block;
   height: 50px;
@@ -190,7 +213,6 @@ section.main .post .content .gallery-container .picture-container a .img-thumbna
   width: 100%;
 }
 section.main .post .read-more {
-  float: right;
   margin: 10px auto;
   font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
@@ -234,49 +256,22 @@ section.main .post .content h6 {
   color: #d7ecff;
   font-family: "Orbitron", sans-serif;
 }
+section.main .post .content h1,
+section.main .post .content h2 {
+  text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px #228dff;
+}
 section.main .post .content h1 {
   width: 100%;
   padding-bottom: 10px;
-  margin: 50px 0 30px 0;
+  margin: 60px 0 30px 0;
   border-bottom: 1px solid #d7ecff;
 }
-@media (max-width: 47.9em) {
-  section.main .post .content h1 {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 33.9em) {
-  section.main .post .content h1 {
-    font-size: 1.5rem;
-  }
-}
 section.main .post .content h2 {
-  margin: 40px 0 15px 0;
-}
-@media (max-width: 47.9em) {
-  section.main .post .content h2 {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 33.9em) {
-  section.main .post .content h2 {
-    font-size: 1rem;
-    margin-top: 20px;
-  }
+  margin: 50px 0 15px 0;
 }
 section.main .post .content h3 {
-  margin: 40px 0 15px 0;
-}
-@media (max-width: 47.9em) {
-  section.main .post .content h3 {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 33.9em) {
-  section.main .post .content h3 {
-    font-size: 1rem;
-    margin-top: 20px;
-  }
+  margin: 50px 0 15px 0;
+  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 7px #228dff;
 }
 section.main .post .content hr {
   border-color: #d7ecff;
@@ -326,7 +321,7 @@ section.main .post .content blockquote footer {
   overflow: auto;
 }
 section.main .post .content blockquote footer strong:before {
-  content: '-';
+  content: "-";
   padding-right: 10px;
 }
 section.main .post .content blockquote footer cite {
@@ -489,29 +484,31 @@ nav a:hover {
   pointer-events: none;
 }
 footer.footer-content {
+  padding-top: 100px;
   width: 100%;
-  padding-top: 60px;
-  color: #d7ecff;
-  text-align: center;
+  min-height: 350px;
   background: #0f1516;
+  color: #d7ecff;
   border-top: 1px dotted #d7ecff;
+  text-align: center;
 }
 @media (max-width: 33.9em) {
   footer.footer-content {
-    padding-top: 20px;
+    min-height: 250px;
+    padding-top: 60px;
   }
 }
 footer.footer-content a,
 footer.footer-content a:link,
 footer.footer-content a:visited,
 footer.footer-content a:active {
-  cursor: pointer;
   color: #d7ecff;
   text-decoration: none;
+  cursor: pointer;
 }
 footer.footer-content h2 {
   font-family: "Orbitron", sans-serif;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 1.5em;
 }
 footer.footer-content ul {
@@ -522,10 +519,10 @@ footer.footer-content .footer-about {
   text-align: left;
 }
 @media (max-width: 47.9em) {
-  footer.footer-content .footer-about {
+  footer.footer-content .footer-about h2 {
     text-align: center;
   }
-  footer.footer-content .footer-about section {
+  footer.footer-content .footer-about p {
     text-align: center;
     padding-bottom: 30px;
   }
@@ -538,8 +535,21 @@ footer.footer-content .footer-social-icons {
     margin: 30px 0 25px 0;
   }
 }
+footer.footer-content .footer-social-icons li {
+  padding: 0 10px;
+  line-height: 3em;
+}
+footer.footer-content .footer-social-icons li .footer-icon-container i {
+  font-size: 2em;
+}
+footer.footer-content .footer-social-icons li a,
+footer.footer-content .footer-social-icons li a:link,
+footer.footer-content .footer-social-icons li a:visited,
+footer.footer-content .footer-social-icons li a:active {
+  border-bottom: 0;
+}
 footer.footer-content .footer-copyright {
-  margin-bottom: 20px;
+  margin: 0 0 40px 0;
   font-size: 0.7em;
 }
 code {
@@ -551,7 +561,7 @@ figure.highlight {
   color: #a9b7c6;
   border-top: 1px solid #d7ecff;
   background: rgba(144,144,144,0.1);
-  overflow-x: auto;
+  overflow-y: auto;
   margin: 1.5em 0;
 }
 figure.highlight figcaption {
@@ -587,98 +597,72 @@ figure.highlight table tbody tr td pre {
   color: #a9b7c6;
 }
 figure.highlight table tbody tr td pre .comment,
-figure.highlight table tbody tr td pre .quote {
-  color: #5c6370;
+figure.highlight table tbody tr td pre .template_comment,
+figure.highlight table tbody tr td pre .diff .header,
+figure.highlight table tbody tr td pre .doctype,
+figure.highlight table tbody tr td pre .pi,
+figure.highlight table tbody tr td pre .lisp .string,
+figure.highlight table tbody tr td pre .javadoc {
+  color: #808080;
   font-style: italic;
 }
-figure.highlight table tbody tr td pre .doctag,
 figure.highlight table tbody tr td pre .keyword,
-figure.highlight table tbody tr td pre .formula {
-  color: #c678dd;
-}
-figure.highlight table tbody tr td pre .section,
-figure.highlight table tbody tr td pre .name,
-figure.highlight table tbody tr td pre .selector-tag,
-figure.highlight table tbody tr td pre .deletion,
-figure.highlight table tbody tr td pre .subst {
-  color: #e06c75;
-}
-figure.highlight table tbody tr td pre .literal {
-  color: #56b6c2;
-}
-figure.highlight table tbody tr td pre .string,
-figure.highlight table tbody tr td pre .regexp,
+figure.highlight table tbody tr td pre .winutils,
+figure.highlight table tbody tr td pre .method,
 figure.highlight table tbody tr td pre .addition,
-figure.highlight table tbody tr td pre .attribute,
-figure.highlight table tbody tr td pre .meta-string {
-  color: #98c379;
+figure.highlight table tbody tr td pre .css .tag,
+figure.highlight table tbody tr td pre .request,
+figure.highlight table tbody tr td pre .status,
+figure.highlight table tbody tr td pre .nginx .title {
+  color: #cc7832;
 }
+figure.highlight table tbody tr td pre .number,
+figure.highlight table tbody tr td pre .command,
+figure.highlight table tbody tr td pre .tag .value,
+figure.highlight table tbody tr td pre .phpdoc,
+figure.highlight table tbody tr td pre .tex .formula,
+figure.highlight table tbody tr td pre .regexp,
+figure.highlight table tbody tr td pre .hexcolor {
+  color: #6897bb;
+}
+figure.highlight table tbody tr td pre .string {
+  color: #6a8759;
+}
+figure.highlight table tbody tr td pre .title,
+figure.highlight table tbody tr td pre .localvars,
+figure.highlight table tbody tr td pre .chunk,
+figure.highlight table tbody tr td pre .decorator,
 figure.highlight table tbody tr td pre .built_in,
-figure.highlight table tbody tr td pre .class .title {
-  color: #e6c07b;
+figure.highlight table tbody tr td pre .identifier,
+figure.highlight table tbody tr td pre .vhdl,
+figure.highlight table tbody tr td pre .literal,
+figure.highlight table tbody tr td pre .id {
+  color: #268bd2;
 }
-figure.highlight table tbody tr td pre .attr,
+figure.highlight table tbody tr td pre .attribute,
 figure.highlight table tbody tr td pre .variable,
-figure.highlight table tbody tr td pre .template-variable,
-figure.highlight table tbody tr td pre .type,
-figure.highlight table tbody tr td pre .selector-class,
-figure.highlight table tbody tr td pre .selector-attr,
-figure.highlight table tbody tr td pre .selector-pseudo,
-figure.highlight table tbody tr td pre .number {
-  color: #d19a66;
+figure.highlight table tbody tr td pre .lisp .body,
+figure.highlight table tbody tr td pre .smalltalk .number,
+figure.highlight table tbody tr td pre .constant,
+figure.highlight table tbody tr td pre .class .title,
+figure.highlight table tbody tr td pre .parent,
+figure.highlight table tbody tr td pre .haskell .type {
+  color: #6a8759;
 }
+figure.highlight table tbody tr td pre .preprocessor,
+figure.highlight table tbody tr td pre .preprocessor .keyword,
+figure.highlight table tbody tr td pre .shebang,
 figure.highlight table tbody tr td pre .symbol,
-figure.highlight table tbody tr td pre .bullet,
-figure.highlight table tbody tr td pre .link,
-figure.highlight table tbody tr td pre .meta,
-figure.highlight table tbody tr td pre .selector-id,
-figure.highlight table tbody tr td pre .title {
-  color: #61aeee;
+figure.highlight table tbody tr td pre .symbol .string,
+figure.highlight table tbody tr td pre .diff .change,
+figure.highlight table tbody tr td pre .special,
+figure.highlight table tbody tr td pre .attr_selector,
+figure.highlight table tbody tr td pre .important,
+figure.highlight table tbody tr td pre .subst,
+figure.highlight table tbody tr td pre .cdata,
+figure.highlight table tbody tr td pre .clojure .title {
+  color: #e8bf6a;
 }
-figure.highlight table tbody tr td pre .emphasis {
-  font-style: italic;
-}
-figure.highlight table tbody tr td pre .strong {
-  font-weight: bold;
-}
-figure.highlight table tbody tr td pre .link {
-  text-decoration: underline;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-::selection {
-  background: 0;
-}
-body {
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-}
-a,
-a:link,
-a:visited,
-a:hover,
-a:active {
-  outline: 0;
-}
-p {
-  text-indent: 2em;
-  text-align: justify;
-}
-em {
-  font-style: normal;
-  font-weight: bold;
-}
-.end-date {
-  float: right;
-}
-.animation {
-  cursor: default;
-}
-.aios_content {
-  flex: 1;
-}
-.footer-content {
-  flex: 0;
+figure.highlight table tbody tr td pre .deletion {
+  color: #dc322f;
 }
