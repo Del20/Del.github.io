@@ -74,7 +74,8 @@
     
 
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Del" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -184,8 +185,11 @@
 <ul>
 <li>\{n\} 匹配前面的字符n次<br>示例：’ro\{2\}t’ 表示匹配以r开头后面接重复2次o再接t的字符 root 。<br><img src="https://img-blog.csdnimg.cn/20200506135859135.png" alt="在这里插入图片描述"></li>
 <li>\{n,\} 匹配前面的字符至少n次以上（含n次），示例：<img src="https://img-blog.csdnimg.cn/20200506134817200.png" alt="在这里插入图片描述"></li>
-<li>\{n,m\} 匹配前面的字符n到m次<br><img src="https://img-blog.csdnimg.cn/20200506140220602.png" alt="在这里插入图片描述"><h6 id="4-“-”-符号"><a href="#4-“-”-符号" class="headerlink" title="4. “^” 符号"></a>4. “^” 符号</h6>这个符号位于键盘数字6上面，又称尖角号。用于匹配开头的字符 。<br>示例：“^root”表示匹配以root开头的行<br><img src="https://img-blog.csdnimg.cn/20200506141119198.png" alt="在这里插入图片描述"><h6 id="5-”-”符号"><a href="#5-”-”符号" class="headerlink" title="5.”$”符号"></a>5.”$”符号</h6>和上面的”^”号相对，”$”用于匹配尾部。<br>示例：”abc$“表示以abc结尾的行，”^$“因为中间什么都没有，表示空行。下面”^r.*h$“表示以r开头，中间有一串任意字符，以h结尾的行。<br><img src="https://img-blog.csdnimg.cn/20200506141626423.png" alt="在这里插入图片描述"><h6 id="6-”-”符号"><a href="#6-”-”符号" class="headerlink" title="6.”[]”符号"></a>6.”[]”符号</h6>这是一对方括号，用于匹配括号内出现的任一字符。比如说单项选择题答案可能是A，B，C，D一种，用正则表达式就是[ABCD]。如果遇到比较大的范围，比如说匹配任意一个大写字母，就要用”-“做范围限定，写成[A-Z]，要匹配所有字母则写成[A-Za-z],注意，这里的”-“不是充当一个字符。数字则写成[0-9]。<br>如果要匹配不是大写字母A，B，C，D，使用”^“，这个符号出现在[]中代表取反，写成[^A-D]。</li>
+<li>\{n,m\} 匹配前面的字符n到m次<br><img src="https://img-blog.csdnimg.cn/20200506140220602.png" alt="在这里插入图片描述"></li>
 </ul>
+<h6 id="4-“-”-符号"><a href="#4-“-”-符号" class="headerlink" title="4. “^” 符号"></a>4. “^” 符号</h6><p>这个符号位于键盘数字6上面，又称尖角号。用于匹配开头的字符 。<br>示例：“^root”表示匹配以root开头的行<br><img src="https://img-blog.csdnimg.cn/20200506141119198.png" alt="在这里插入图片描述"></p>
+<h6 id="5-”-”符号"><a href="#5-”-”符号" class="headerlink" title="5.”$”符号"></a>5.”$”符号</h6><p>和上面的”^”号相对，”$”用于匹配尾部。<br>示例：”abc$“表示以abc结尾的行，”^$“因为中间什么都没有，表示空行。下面”^r.*h$“表示以r开头，中间有一串任意字符，以h结尾的行。<br><img src="https://img-blog.csdnimg.cn/20200506141626423.png" alt="在这里插入图片描述"></p>
+<h6 id="6-”-”符号"><a href="#6-”-”符号" class="headerlink" title="6.”[]”符号"></a>6.”[]”符号</h6><p>这是一对方括号，用于匹配括号内出现的任一字符。比如说单项选择题答案可能是A，B，C，D一种，用正则表达式就是[ABCD]。如果遇到比较大的范围，比如说匹配任意一个大写字母，就要用”-“做范围限定，写成[A-Z]，要匹配所有字母则写成[A-Za-z],注意，这里的”-“不是充当一个字符。数字则写成[0-9]。<br>如果要匹配不是大写字母A，B，C，D，使用”^“，这个符号出现在[]中代表取反，写成[^A-D]。</p>
 <h6 id="7-”-“符号"><a href="#7-”-“符号" class="headerlink" title="7.”\“符号"></a>7.”\“符号</h6><p>转义符号，上面提到”-“号在[]中有特别含义，举个例子，有个固定电话021-88888888，<br>也可写成021 88888888区号和电话号码中间用空格隔开，一个是”-“，一个是空格，那我们不能这么写：[-]，为了表示其作为一个字符的本意，就要使用转义符”\“了，那这里应该写成[\ \-]其实在这里这个表达式中总共写了4个”\“，但你只能看到2个，就是因为“\”本身在这里就有特殊意义，如果只写两个，你就看不到它了本文中如果有些地方符号显示不正常，可能就是没有进行转义，怪我粗心了。很多地方很多符号都需要进行转义，就需要使用”\“进行转义。<br><img src="https://img-blog.csdnimg.cn/20200506144546215.png" alt="在这里插入图片描述"></p>
 <h6 id="8-”-lt-”符号和”-gt-”符号"><a href="#8-”-lt-”符号和”-gt-”符号" class="headerlink" title="8.”\&lt;”符号和”\&gt;”符号"></a>8.”\&lt;”符号和”\&gt;”符号</h6><p>这两个符号分别用于界定单词的左边界和右边界。如果两个组合在一起，能够精确匹配，如”\&lt;hello\&gt;”可以精确匹配单词hello.<br>示例：<br><img src="https://img-blog.csdnimg.cn/20200506145806926.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzIyMzc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>以上8种是常见的元字符，还有些不太常用的字符，这些字符中有不少可以使用之前的8种基础元字符来表示。以下只作简单示例</p>
 <h6 id="9-”-d”符号"><a href="#9-”-d”符号" class="headerlink" title="9.”\d”符号"></a>9.”\d”符号</h6><p>匹配一个数字，等价于[0-9]，使用grep匹配这种正则表达式时可能会有无法匹配的问题。<br><img src="https://img-blog.csdnimg.cn/2020050615130787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzIyMzc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -332,7 +336,7 @@
                     
                     
                     <li class="list-inline-item">
-                        <a href="\#">
+                        <a href="/atom.xml">
                             <span class="footer-icon-container">
                                 <i class="fa fa-rss"></i>
                             </span>
