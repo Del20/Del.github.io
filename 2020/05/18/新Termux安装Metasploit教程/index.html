@@ -29,7 +29,7 @@
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hello Time"/>
+    <meta property="og:site_name" content="Del"/>
 
     <!--Type page-->
     
@@ -47,7 +47,7 @@
 
     <!-- Title -->
     
-    <title>最新Termux安装Metasploit教程 - Hello Time</title>
+    <title>最新Termux安装Metasploit教程 - Del</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -153,7 +153,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2020/05/18/%E6%9C%80%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/">
+            <a href="/2020/05/18/%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/">
                 最新Termux安装Metasploit教程
             </a>
         </h1>
@@ -162,6 +162,10 @@
                 <span class="date">2020-05-18</span>
             
             
+            
+                <span class="category">
+                    <a href="/categories/Linux/">Linux</a>
+                </span>
             
         </div>
     </div>
@@ -172,8 +176,10 @@
         
 
         <!-- Post Content -->
-        <h2 id="最新Termux安装metasploit教程"><a href="#最新Termux安装metasploit教程" class="headerlink" title="最新Termux安装metasploit教程"></a>最新Termux安装metasploit教程</h2><p>网上教程都很多了，不过有些已经过时了，现在官方已经在官方源中添加了metasploit包，安装只需要两条命令,但还是很难安装！这里说下捣腾时的一些经验。</p>
-<p>   首先安装前最好是干净的环境，把Termux程序的数据清除，因为安装过软件的termux可能会有依赖版本或者其他问题导致msf安装时数据库设置出错，导致启动不了数据库，本人小白，处理不了那些 问题，只能重装，经过多次重装后，发现原始环境更容易一次成功。另外失败的原因是，国外源，大家懂的，安装时最好挂梯子。安装msf时最好不要换源。</p>
+        <p>网上教程都很多了，不过有些已经过时了，现在官方已经在官方源中添加了metasploit包，安装只需要两条命令,但还是很难安装！这里说下捣腾时的一些经验。</p>
+<a id="more"></a>
+
+<p>首先安装前最好是干净的环境，把Termux程序的数据清除，因为安装过软件的termux可能会有依赖版本或者其他问题导致msf安装时数据库设置出错，导致启动不了数据库，本人小白，处理不了那些 问题，只能重装，经过多次重装后，发现原始环境更容易一次成功。另外失败的原因是，国外源，大家懂的，安装时最好挂梯子。安装msf时最好不要换源。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#安装前先更新一下源</span><br><span class="line">pkg update &amp;&amp; pkg upgrade</span><br><span class="line">pkg install unstable-repo</span><br><span class="line">#先安装repo再安装msf</span><br><span class="line">pkg install metasploit</span><br></pre></td></tr></table></figure>
 <p>  另外如果安装失败重新安装的话，最好是清理一下数据或者卸载msf再重新安装（卸载安装各种玄学问题，推荐清理应用数据）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#卸载并清除配置文件</span><br><span class="line">apt-get purge metasploit</span><br></pre></td></tr></table></figure>
@@ -229,7 +235,7 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/18/%E6%9C%80%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/">最新Termux安装Metasploit教程</a>
+                <a class="footer-post" href="/2020/05/18/%E6%96%B0Termux%E5%AE%89%E8%A3%85Metasploit%E6%95%99%E7%A8%8B/">最新Termux安装Metasploit教程</a>
             </li>
             
         </ul>
@@ -238,13 +244,28 @@
 
 
             
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Python/">Python</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Linux/">Linux</a>
+        </li>
+        
+    </ul>
+</div>
+
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <ul class="list-inline footer-social-icons">
                     
                     <li class="list-inline-item">
-                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                        <a href="https://github.com/del20" target="_blank" rel="noopener">
                             <span class="footer-icon-container">
                                 <i class="fa fa-github"></i>
                             </span>
@@ -252,67 +273,11 @@
                     </li>
                     
                     
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
                     
                     
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
                     
                     
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-instagram"></i>
-                            </span>
-                        </a>
-                    </li>
                     
-                    
-                    <li class="list-inline-item">
-                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-dribbble"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-behance"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://500px.com/" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-500px"></i>
-                            </span>
-                        </a>
-                    </li>
                     
                     
                     <li class="list-inline-item">
@@ -340,11 +305,11 @@
 		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 		<div class="powered-by">
 		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		  本站访客数	<span id="busuanzi_value_site_uv"></span>
 		  </span>
 		  </div>
 		<div class="footer-copyright">
-                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                    @Untitled. All right reserved | Design & Hexo <a href="http://github.com/del20" target="_blank" rel="noopener">Del</a>
                 </div>
             </div>
         </div>
